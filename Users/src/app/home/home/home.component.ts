@@ -26,7 +26,7 @@ export class HomeComponent  implements OnInit {
   slides: any[] = [
   {
     id: 0,
-    src: '../../../assets/photo-1612929633738-8fe44f7ec841.png',
+    src: '../../../assets/4749627-ai (2).png',
     title: 'DELECIOUS FOOD SYSTEM',
 
     subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
@@ -34,12 +34,12 @@ export class HomeComponent  implements OnInit {
 ,
 {
   id: 0,
-  src: '../../../assets/photo-1612929633738-8fe44f7ec841.png',
+  src: '../../../assets/4749627-ai (2).png',
   title: 'DELECIOUS FOOD SYSTEM',
 
   subtitle: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
 }
-,
+
 
 ];
   constructor(public restSer:ResturantServicesService , public _router:Router , public PromoSer:PromoServiceService){
