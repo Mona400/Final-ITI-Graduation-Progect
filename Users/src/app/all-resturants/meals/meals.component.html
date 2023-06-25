@@ -1,0 +1,89 @@
+
+
+<div class="container py-4">
+    <section class="rest-section">
+      <ng-template #loading_blOCK>
+        <div  style="height: 100vh;" >
+          <mat-spinner color="#ff4000" style=" width: 100px;
+          height: 100px;
+          margin: auto;
+          transform: translateY(25vh);"></mat-spinner>
+        </div>
+      </ng-template>
+
+      <div *ngIf="!loading_state; else loading_blOCK" class="row">
+        <div class="first-half col-lg-4 col-md-4 col-sm-12 text-end">
+          <img src="{{enivroment + payload?.rest.image}}" width="70%" alt="">
+        </div>
+
+        <div  *ngIf="payload" class="second-half col-lg-8 col-md-8 col-sm-12">
+          <h1 class="fs-3 text-uppercase font-weight-bold">{{payload?.rest.title}}</h1>
+          <!-- <p *ngIf="payload.rest.branches[0]" class="text-muted" >{{payload?.rest?.branches[0]}}</p> -->
+          <p > <span class="intro">Spatiality : </span> {{payload.rest?.speciality}}</p>
+          <p><span class="intro">Description : </span> {{payload?.rest?.description}} </p>
+          <p><span class="intro">Ratings : </span> {{payload?.rest?.rating.toFixed(2)}} </p>
+        </div>
+      </div>
+
+    </section>
+
+    <section  *ngIf="!loading_state; else loading_blOCK" class="meals-section">
+      <h1 class="text-center">Meals Section</h1>
+
+      <!-- <div (click)="category_click($event)" class="buttons">
+        <button>Breakfast</button>
+        <button>Dinner</button>
+        <button>Lunch</button>
+      </div> -->
+      <ul class="nav menu nav-tabs d-flex justify-content-center" (click)="category_click($event)">
+
+        <li class="menu_changer nav-item">
+          <a class="  nav-link" data-bs-toggle="tab" data-bs-target="#menu-breakfast">
+            <h4>Breakfast</h4>
+          </a><!-- End tab nav item -->
+
+        <li class=" menu_changer  nav-item">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
+            <h4>Lunch</h4>
+          </a>
+        </li><!-- End tab nav item -->
+
+        <li class="menu_changer  nav-item">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-dinner">
+            <h4>Dinner</h4>
+          </a>
+        </li><!-- End tab nav item -->
+
+      </ul>
+
+      <div class="text-center">
+        <p class="mt-5 text-uppercase">Menu</p>
+
+        <h3 class=" header-title text-capitalize  fw-bold fs-1">{{selected_menu}}</h3>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-lg-4 text-center" *ngFor="let item of payload.meals.current">
+          <div data-aos="zoom-in" data-aos-duration="800"  data-aos-easing="linear" class="card text-center" >
+            <div >
+              <img src={{enivroment+item.image}} class="card-img-top mx-auto" width="250px" alt="..." >
+              <i (click)="addToCart(item)" class="fa-solid grapper fa-circle-plus"></i>
+
+
+            </div>
+            <div class="card-body">
+            <h5 class="card-title text-center">{{item.title}}</h5>
+            <p class="card-text">{{item.description}}..</p>
+
+            <p class="price">$ {{item.price}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+</div>

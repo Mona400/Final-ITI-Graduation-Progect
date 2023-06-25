@@ -1,0 +1,31 @@
+<!-- <div class="box"> -->
+<!-- <div class="myclass">
+    <app-select
+      [data]="categories"
+      [title]="'Categories'"
+      (selectedValue)="filterCategory($event)"
+    ></app-select>
+  </div> -->
+<!-- *ngIf="!loading" -->
+
+<app-select
+  [data]="categories"
+  [title]="'Our Products'"
+  (selectedValue)="filterCategory($event)"
+></app-select>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let item of products">
+      <app-product [data]="item" (item)="addToCart($event)"></app-product>
+    </div>
+  </div>
+</div>
+<ul class="prev">
+  <li routerLink="/all-resturants"><i class="fa fa-caret-left"></i>Back</li>
+</ul>
+
+<!-- <div class="text-center w-100" *ngIf="loading">
+    <app-spinner></app-spinner>
+  </div> -->
+<!-- </div> -->

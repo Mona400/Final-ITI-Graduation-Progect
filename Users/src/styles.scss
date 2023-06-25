@@ -1,0 +1,163 @@
+
+
+// Uncomment the following lines if you want to add a custom palette:
+// $primary: #731963 !default;
+// $secondary: #ce5712 !default;
+// $app-palette: palette($primary, $secondary);
+
+/* autoprefixer grid: on */
+
+// @include core();
+// @include typography($font-family: $material-typeface, $type-scale: $material-type-scale);
+// @include theme($default-palette);
+// CSS Reset, comment out if not required or using a different module
+@import 'minireset.css/minireset';
+/* You can add global styles to this file, and also import other style files */
+// body{
+//   padding: 0;
+//   margin: 0 !important;
+
+// }
+// *{
+//   font-family: cursive;
+// }
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap");
+
+
+.containers{
+  width: 90%;
+  margin: 0 auto;
+
+}
+/* You can add global styles to this file, and also import other style files */
+body{
+  padding: 0;
+  margin: 0;
+  // background: #fff;
+
+
+}
+*, *::before, *::after{
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+
+
+}
+
+
+// ------------------------------banner style
+.banner{
+  position: relative;
+}
+.item img {
+  display: block;
+  width: 100%;
+}
+.banner img {
+  vertical-align: middle;
+  border-style: none;
+  height: 75vh;
+}
+.banner .owl-prev,.banner .owl-next{
+  width: 110px;
+  height: 110px;
+position: absolute;
+top:50%;
+transform: translate(-50%,-50%);
+overflow: hidden;
+background: transparent !important;
+transition: 0.3s all ease;
+}
+.banner .owl-prev{
+left: 0;
+}
+.banner .owl-next{
+right: -60px;
+}
+.banner .owl-prev::before,.banner .owl-next::before{
+   position: absolute;
+   top: 50%;
+   transform: translate(-50%,-50%);
+   width: 110px;
+   height: 110px;
+  //  background: #eee;
+   background: rgba(158, 158, 158, 0.25) !important;
+   content: '';
+   border-radius: 50%;
+
+}
+.banner .owl-prev::before{
+left: 44px;
+}
+.banner .owl-next::before{
+right: -106px;
+}
+.banner .owl-prev i,.banner .owl-next i{
+font-size: 20px;
+position: absolute;
+top: 50%;
+transform: translate(-50%,-50%);
+}
+.banner .owl-next i{
+right: 0;
+}
+.banner.owl-prev:hover::before,.banner.owl-next:hover::before{
+  background: #ff4000;
+
+}
+
+.banner .owl-next::after{
+
+}
+// -----------------------------------policy style
+.policy-product .owl-next ,.policy-product .owl-prev{
+  background: rgba(158 158 158 /25%) !important;
+  color: #222 !important;
+  height: 60px !important;
+  width: 60px !important;
+  border-radius:50% !important ;
+  position: absolute;
+  top:50%;
+  transition: 0.3 all ease;
+
+}
+.policy-product .owl-next {
+  right:2rem;
+  transform: translate(-50%,-50%);
+
+}
+.policy-product .owl-prev{
+
+left: 4rem;
+transform: translate(-50%,-50%);
+}
+.policy-product .owl-next:hover ,.policy-product .owl-prev:hover{
+background:#ff4000 !important;
+color: #fff !important;
+}
+.policy-product .owl-next i,.policy-product .owl-prev i{
+font-size: 24px;
+top: 50%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-50%);
+}
+
+
+.cdk-overlay-container{
+  z-index: 1200 !important;
+}
+
+
+@mixin res-img{
+  object-fit: contain;
+  width: 100%;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.dropdown-toggle::after{
+  display: none !important;
+}

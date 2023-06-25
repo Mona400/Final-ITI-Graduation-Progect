@@ -1,0 +1,513 @@
+// ------------------------------banner style
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+.banner{
+  position: relative;
+  height: 600px;
+}
+.item-1,.item-2
+{
+  position: relative;
+  // right:-10px;
+  background:#1a1a1a;
+  height: 600px;
+  background-size: cover;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 2fr;
+  //margin-top:50px;
+
+
+}
+.item-2
+{
+  background: #1a1a1a url("../../../assets/6189239-ai\ \(2\).png");
+  background-size: cover;
+}
+.item-1 .image,.item-2 .image
+
+{
+  position: absolute;
+  right:-100px;
+  height: 800px;
+  width:100%;
+  top:-130px;
+  z-index: 2;
+
+
+}
+
+.item-2 .image
+
+{
+
+  right:0px;
+  height: 600px;
+  width:100%;
+  top:-30px;
+  z-index: 2;
+}
+
+.item-1 .image img,
+.item-2 .image img
+{
+  height:100%
+}
+
+.item-1 .content,
+.item-2 .content
+{
+position: relative;
+left:70px;
+align-self: center;
+z-index:55!important;
+color: #fff;
+}
+.item-2 .content
+{
+  left:50%;
+  top:50px
+}
+
+.item-1 h2
+ {
+  font-family: 'Anton', sans-serif;
+
+ }
+@media(max-width:767px)
+{
+  .item-1 .image
+{
+  right:-70px;
+  width:150%;
+
+}
+}
+.item img {
+  display: block;
+  width: 100%;
+}
+.banner img {
+  vertical-align: middle;
+  border-style: none;
+  background-color: #000;
+  height: 75vh;
+  object-fit: cover;
+}
+.banner .owl-prev,.banner .owl-next{
+  width: 110px;
+  height: 110px;
+position: absolute;
+top:50%;
+transform: translate(-50%,-50%);
+overflow: hidden;
+background: transparent !important;
+transition: 0.3s all ease;
+}
+.banner .owl-prev{
+left: 0;
+}
+.banner .owl-next{
+right: -60px;
+}
+.banner .owl-prev::before,.banner .owl-next::before{
+   position: absolute;
+   top: 50%;
+   transform: translate(-50%,-50%);
+   width: 110px;
+   height: 110px;
+   background: gray;
+   content: '';
+   border-radius: 50%;
+
+}
+.banner .owl-prev::before{
+left: 44px;
+}
+.banner .owl-next::before{
+right: -106px;
+}
+.banner .owl-prev i,.banner .owl-next i{
+font-size: 20px;
+position: absolute;
+top: 50%;
+transform: translate(-50%,-50%);
+}
+.banner .owl-next i{
+right: 0;
+}
+.banner .owl-prev:hover::before,.banner .owl-next:hover::before{
+  background: #ff4000;
+
+}
+
+.banner .owl-next::after{
+
+}
+----------------Best Seller------------------------------------------
+.best-selling{
+  position: relative;
+  background: #eee !important;
+  z-index: 1;
+  }
+  .best-selling-container{
+    position: relative;
+    background: #fff;
+    row-gap: 5vh;
+    display: flex;
+    padding-block: 0vh;
+    width: 100%;
+    height: 56vh;
+    border-radius: 20px;
+    top: -70px;
+  }
+  .sale-price{
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: #ff4000;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 12px;
+  text-transform: uppercase;
+  font-size: 26px;
+  width: 260px;
+  text-align: center;
+
+  }
+  .selling-col-1{
+    width: 16%;
+    display: inline-block;
+    vertical-align: middle;
+    flex-grow: 1;
+    /* padding-block: 23vh; */
+    height: 100%;
+    padding: 0;
+  }
+  .selling-col-2,.selling-col-3{
+    width: 40%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .selling-left{
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+  .selling-left ul{
+    padding: 0;
+    background: rgba(195, 195, 195, 0.5490196078);
+    border-radius: 20px;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+
+  }
+  .selling-left ul li{
+    display: block;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+  .selling-left ul li:first-child{
+
+    border-top-left-radius:10px ;
+  }
+  .selling-left ul li:last-child{
+  border-bottom: none;
+  border-bottom-left-radius: 10px;
+  }
+  .selling-left ul li .count-date{
+  color: #000;
+  font-size: 30px;
+  font-weight: 800;
+  display: block;
+  letter-spacing: 0.6px;
+  }
+  .selling-left ul li .count-day{
+  color: #555;
+  display: block;
+  font-size: 18px;
+  }
+  .selling-img img {
+    width: 100%;
+    height: 100%;
+  }
+  .selling-heading{
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dbdbdb;
+  }
+  .selling-heading a{
+    color: #555;
+    font-size: 28px;
+    text-transform: capitalize;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .selling-heading a:hover{
+    color: #ff4000;
+  }
+  .selling-rating{
+    margin-top: 4px;
+  }
+  .selling-rating i{
+  color: #ff4000;
+  margin-right: 4px;
+  font-size: 12px;
+  }
+  .selling-col-3 p{
+  color: #777;
+  line-height: 22px;
+  margin: 22px 0;
+  }
+  .selling-col-3 h3 .selling-amount{
+    font-weight: 700;
+  font-size: 30px;
+  color: #ff4000;
+  font-style: italic;
+  }
+  .selling-col-3 h3 .selling-discount{
+  color: #555;
+  font-size: 22px;
+  line-height: 18px;
+  font-weight: 600;
+  text-decoration: line-through;
+  margin-left: 10px;
+  font-style: italic;
+  }
+  .selling-button{
+  margin-top: 34px;
+  }
+   .cart-btn{
+  background-color: #ff4000;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 14px;
+  text-transform: uppercase;
+  padding: 12px 34px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  transition: all 0.3s ease;
+  }
+  .cart-btn:hover{
+    background: #c30;
+
+
+  }
+  .cart-btn i{
+    margin-right: 4px;
+
+  }
+  .main-button{
+    border: none;
+    outline: none;
+    text-align: center;
+    background: #000;
+    padding: 11px 10px;
+    border-radius: 4px;
+  }
+  .main-button a{
+    background: #000;
+    padding: 11px 10px;
+    border-right: 1px solid rgb(73, 73, 73);
+  }
+  .main-button a:hover{
+  background: #ff4000;
+  }
+  .main-button a:last-child{
+    border-right: none;
+  }
+  .main-button i{
+    color: #fff;
+  }
+
+  .firstSec{
+
+
+
+    .my-container{
+      div:first-child{
+        padding-left: 5vw;
+        h1{
+          line-height: 5rem;
+          font-size: 2.5rem;
+          width: 37vw;
+        }
+      }
+
+      width: 100%;
+      margin: auto;
+    }
+
+  }
+
+
+
+
+  .SecondSec{
+
+    .container{
+
+      justify-content: space-around;
+      align-items: center;
+      gap: 10vw;
+
+      img{
+        width: 6rem;
+      }
+
+    }
+    margin-top: 5vh;
+    display: flex;
+    background-color: rgb(246, 246, 246);
+    padding-block: 24vh;
+    gap: 11vw;
+    margin-block: 6vh;
+
+  }
+
+
+  .RestSection{
+
+    .RestCard{
+      margin: auto;
+      row-gap: 4vh;
+      margin-bottom: 5vh;
+    }
+    .firstSection{
+      width: 93%;
+      margin: auto;
+    }
+  }
+
+
+
+  @media all and (max-width:1024px) {
+
+    .carousel-caption{
+
+      top: 14% !important;
+      p{
+        width: auto !important;
+      }
+
+    }
+
+    .selling-left ul{
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      background: rgba(195, 195, 195, 0.5490196078);
+      width: 100%;
+      border-radius: 20px;
+      margin: auto;
+
+    }
+
+
+
+
+
+
+
+
+
+
+      .best-selling-container{
+        position: relative;
+        background: #fff;
+        border-radius: 10px;
+
+        width: auto;
+        display: flex;
+        height: auto;
+        top: -70px;
+        justify-content: center;
+        & > div{
+          width: 100%;
+          margin-inline: 0;
+
+        }
+      }
+
+    .my-container{
+      text-align: center;
+      padding-block: 10vh;
+      row-gap:2rem ;
+      div:first-child{
+
+        h1{
+          line-height: normal !important;
+          width: 100% !important;
+        }
+      }
+
+      width: 100%;
+    }
+
+  }
+
+  @media all and (max-width:900px) {
+    .selling-left ul{
+
+      border-radius: 9px;
+      padding-block: 3vh;
+    }
+  }
+
+
+
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .carousel-caption{
+    z-index: 2;
+    position: absolute;
+    /* right: 15%; */
+    top: 14%;
+    left: 16%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    /* background-color: black; */
+    color: white;
+    text-align: start;
+    p{
+      width: 30%;
+    }
+  }
+
+div.carousel-indicators{
+  display: none !important;
+}

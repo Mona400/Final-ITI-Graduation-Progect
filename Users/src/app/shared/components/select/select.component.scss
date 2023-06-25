@@ -1,0 +1,26 @@
+.header{
+  margin: 150px  150px 20px  150px;
+  text-align: right;
+  position: relative;
+  // width: 95%;
+}
+.title{
+  background-color: #eee;
+  padding: 10px;
+  font-weight: 400;
+  text-align: center;
+  width: 97%;
+  font-size: x-large;
+}
+.form-control{
+  padding: 3px;
+  margin-top: 15px;
+  text-align: left;
+  border-radius: 2px;
+  border: 3px solid #eee;
+  transition: 0.3 all ease;
+  width: 40%;
+}
+// input[type="search"]{
+//   outline: none;
+// }

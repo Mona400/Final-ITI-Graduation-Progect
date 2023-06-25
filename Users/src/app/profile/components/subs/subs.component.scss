@@ -1,0 +1,71 @@
+
+
+
+
+.table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table td,.table th{
+  padding:12px 15px;
+  border:1px solid #ddd;
+  text-align: center;
+  font-size:16px;
+  vertical-align: middle;
+}
+
+.table th{
+	background-color: #2f2f3c;
+	color:#ffffff;
+}
+
+.table tbody tr:nth-child(even){
+	background-color: #f5f5f5;
+}
+
+/*responsive*/
+
+@media(max-width: 500px){
+	.table thead{
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+	.table tr{
+		margin-bottom:15px;
+    text-align: center;
+	}
+	.table td{
+		text-align: center;
+		//padding-left: 50%;
+
+		//text-align: right;
+		position: relative;
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 70px;
+}
+
+
+igx-time-picker {
+  width: 400px;
+}
+

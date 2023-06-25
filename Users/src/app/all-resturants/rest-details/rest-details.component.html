@@ -1,0 +1,128 @@
+<div class="container">
+
+  <div class="placeholder-container">
+
+    <ng-template #loading_blOCK>
+      <div  style="height: 100vh;" >
+        <mat-spinner color="#ff4000" style=" width: 100px;
+        height: 100px;
+        margin: auto;
+        transform: translateY(25vh);"></mat-spinner>
+      </div>
+    </ng-template>
+
+    <div   *ngIf="!loading_state; else loading_blOCK" class="hero_placeholder">
+      <img src="{{ this.RestService.environment.ImgURL + payload?.image}}" class="rounded my-3 new-background" width="200px">
+
+
+      <div class="lower-section ">
+        <div class="text-center">
+          <!-- <img src="{{payload?.image}}" class="rounded my-3" width="200px"> -->
+          <h1 style="font-size: 2rem;
+          padding-block: 4vh;
+          font-weight: bold;" >{{payload?.title}}</h1>
+          <p style="    font-size: 1.5rem;
+          padding-bottom: 2vh;">{{payload?.speciality}}</p>
+
+        </div>
+        <h2 class="text-center fs-2">Search For Meals That you will like</h2>
+        <div class="search_and_button  text-center w-100 ">
+
+            <!-- <input type="text" class="w-80" name="meals"  placeholder="Search For Meals">
+              <mat-form-field class="example-full-width">
+                <mat-label>Search Something</mat-label>
+                <mat-icon class="text-dark" matPrefix>search</mat-icon>
+                <input type="text" matInput placeholder="Type something..">
+              </mat-form-field>
+ -->
+
+
+            <button routerLink="/restaurant/{{payload?.id}}/meals" class="show_btn" >Show Menu</button>
+
+
+        </div>
+          <div class="ratings_and_payments mx-auto d-flex justify-content-around w-50 ">
+              <div class="ratings">
+                <img src="../../../assets/ratings.png" width="30px" style="margin-right: .2vw;">  <span>{{payload?.rating.toFixed(2)}}</span>   Rating
+              </div>
+
+              <div class="reviews">
+                <img src="../../../assets/reviews.png" width="30px" alt="">   {{payload?.reviews.length}} Reviews
+              </div>
+
+              <!-- <div class="payments">
+                Payments
+              </div> -->
+          </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="lower">
+    <section class="container">
+      <p style="font-size: 22px; color: lightcoral;">{{payload?.title}} Delivers to You</p>
+      <p>{{payload?.description}}</p>
+    </section>
+
+    <section>
+      <p>Best Seller Dishes</p>
+      <br>
+      <div class="dishes d-flex justify-content-around">
+        <div class="row">
+          <ng-template ngFor let-item [ngForOf]="payload?.meal" let-i="index">
+            <div class="col-md-6 col-lg-3 col-sm-12">
+              <div class="card" routerLink="/restaurant/{{payload?.id}}/meals/{{payload?.meal[i].id}}">
+
+                <img src="{{ imgurl+payload?.meal[i].image}}" class="card-img-top" width="15rem" style="aspect-ratio: 1/1;" alt="..." >
+                <div class="card-body">
+                <h5 class="card-title text-center">{{payload?.meal[i].name}}</h5>
+                <p class="card-text">{{payload?.meal[i].description.substring(0,50)}}..</p>
+                </div>
+              </div>
+            </div>
+
+
+          </ng-template>
+        </div>
+
+
+
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="reviews-section">
+
+      <p>{{payload?.title}} Reviews ({{payload?.reviews.length}})</p>
+
+      <div class="d-flex justify-content-around">
+       <button (click)="AddingReviews()" class="btn btn-primary" >Add a Review</button>
+      </div>
+
+      <div class="actual-reviews" >
+        <div *ngIf="review_flag" class="review-container">
+          <p class="review_title"> <img src="../../../assets/good.png" width="20px" style="border-radius: 50%;">  <span> {{user.username}}</span> </p>
+          <mat-form-field class="example-full-width w-80">
+            <mat-label>Leave a comment</mat-label>
+            <textarea [(ngModel)]="comment" matInput placeholder="Ex. It makes me feel..."></textarea>
+          </mat-form-field>
+          <button (click)="submitMe()" class="btn btn-success mx-2">Submit</button>
+
+         </div>
+
+        <ng-template ngFor let-item [ngForOf]="payload?.reviews" let-i="index">
+          <div class="review-container">
+           <p class="review_title"> <img src="{{ this.RestService.environment.ImgURL + payload?.reviews[i].profileImg}}" width="50px"  style="border-radius: 50%; aspect-ratio: 1/1;">  <span> {{payload?.reviews[i].userName}}</span> </p>
+           <p class="px-5">{{payload?.reviews[i].comment}}</p>
+
+          </div>
+
+        </ng-template>
+      </div>
+
+    </section>
+  </div>
+</div>

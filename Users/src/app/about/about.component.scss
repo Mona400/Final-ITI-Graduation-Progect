@@ -1,0 +1,47 @@
+// .developpers{
+//   & > div{
+//     display: flex;
+
+//   }
+// }
+
+form .row{
+  margin-block: 4vh;
+}
+
+.developpers{
+  background-color: grey;
+  color: black;
+    width: 100%;
+    margin: auto;
+    padding-block: 3vh;
+    row-gap: 6vh;
+
+    &>div{
+      display: flex;
+      flex-direction: column;
+      row-gap: 4vh;
+      align-items: center;
+
+      &>h2{
+        font-size: 2.5rem;
+        font-weight: bolder;
+
+      }
+      &>img{
+        border-radius: 50%;
+        object-fit: cover;
+        width: 250px;
+        aspect-ratio: 1/1;
+      }
+    }
+}
+
+@media  all and (max-width:800px) {
+  .developpers{
+    font-size: 2rem;
+  }
+  .totle{
+    font-size: 4rem !important;
+  }
+}

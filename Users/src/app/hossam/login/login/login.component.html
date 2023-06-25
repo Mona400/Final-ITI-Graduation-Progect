@@ -1,0 +1,113 @@
+<!-- <p>login works!</p> -->
+
+
+
+
+
+<!-- <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div> -->
+
+<section class="100vh" style="background-color:#eee ;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+
+        <div class="card" style="border-radius: 1rem; width: 90%;">
+          <div class="row g-0" style="    display: grid; grid-template-columns: 50% 50%;">
+            <div class="col-md-6 col-lg-6 col-sm-12 d-none d-md-block">
+
+               <!-- <img src="../../../../assets/login.jpg"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height: 500px;" /> -->
+                <header>
+
+                  <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+                  <div class="overlay"></div>
+
+                  <!-- The HTML5 video element that will create the background video on the header -->
+                  <video playsinline="playsinline" autoplay="autoplay" [muted]="'muted'" muted="muted" loop="loop">
+                    <source src="../../../../assets/Food Film - Cinematic Burger.mkv"  muted="muted" type="video/mp4">
+                  </video>
+
+                  <!-- The header content -->
+                  <div class="container h-100">
+                    <div class="d-flex h-100 text-center align-items-center">
+                      <div class="w-100 text-white">
+                        <!-- <h1 class="display-3">AKELNY</h1>
+                        <p> you will find what u want here   </p> -->
+                        <!-- <p class="lead mb-0">Using HTML5 Video and Bootstrap</p> -->
+
+                      </div>
+                    </div>
+                  </div>
+                </header>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+
+                <form [formGroup]="myloginform" onsubmit="return false" >
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fa-solid fa-fork-knife"></i>
+                    <i class="fa-solid fa-burger-glass"></i>
+
+
+                    <!-- <span class="h1 fw-bold mb-0"><img src="../../../../assets/" alt="">logo</span> -->
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+
+                  <!-- <div class="form-outline mb-4">
+                    <input  formcontrolName="Email" type="email" id="form2Example17" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example17">Email address</label>
+                  </div> -->
+
+                  <div class="form-group">
+                    <label for="email">Username : </label>
+                    <input  formControlName="Email"  type="text" name="email" class="form-control" placeholder="Username" required email  >
+                  </div>
+
+                  <div class="form-group">
+                    <label for="password">Password : </label>
+                    <input formControlName="passward"   #password id="passward" required type="password" name="password" class="form-control" placeholder="********" >
+                  </div>
+
+
+                  <!-- <div class="form-outline mb-4">
+                    <input formControlName="Passward"  type="password" id="form2Example27" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example27">Password</label>
+                  </div> -->
+
+
+
+                  <div class="pt-1 mb-4">
+                    <button   (click)="login()" class="btn btn-dark btn-lg btn-block" type="button">Login</button>
+                  </div>
+
+                  <a class="small text-muted" href="#!">Forgot password?</a>
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account?
+                    <a routerLink="/sign-up" style="color: #ff4000;">Register here</a>
+
+                  </p>
+
+
+
+                  <a href="#!" class="small text-muted">Terms of use.</a>
+                  <a href="#!" class="small text-muted">Privacy policy</a>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</section>

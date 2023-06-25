@@ -1,0 +1,35 @@
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0;
+  margin-left: 0;
+  width: 95%;
+  // height: 16rem;
+}
+
+// .mytitle{
+//   margin-right: 0;
+//   margin-left: 0;
+//   width: 95%;
+// }
+.prev{
+  left: 150px;
+  position: absolute;
+  background: #eee;
+  width: 150px;
+  height: 40px;
+  border-radius: 22px;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  position: fixed;
+  bottom: 12px;
+  left: 25px;
+}
+ul  li{
+  list-style-type: none;
+}
+ .prev:hover{
+  background: #ff4000;
+  color: #eee;
+}

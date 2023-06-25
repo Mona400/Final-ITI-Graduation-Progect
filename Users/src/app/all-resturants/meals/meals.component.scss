@@ -1,0 +1,134 @@
+.rest-section{
+
+  .second-half{
+    display: grid;
+    grid-template-rows: .3fr repeat(3, .1fr);
+    align-content: center;
+  }
+}
+
+
+.meals-section{
+
+  margin-block: 8vh;
+  .row{
+    row-gap: 8vh;
+    margin-top: 7vh;
+  }
+  .card{
+
+    &>div{
+      position: relative;
+    }
+    position: relative;
+    border: none;
+    text-align: center;
+
+    .grapper{
+      position: absolute;
+      right: 4vw;
+      font-size: 4rem;
+      background-color: black;
+      top: 88%;
+      scale: 0;
+      transition: 0.5s all;
+      color: #ff4000 ;
+      border-radius: 50%;
+    }
+
+    &:hover{
+      .grapper{
+        scale: (1);
+      }
+    }
+    img{
+      width: 300px;
+      border-radius: 50%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+
+    button{
+      color: red;
+      font-size: 2rem;
+      border: none;
+      background: transparent;
+      text-decoration: underline;
+    }
+  }
+
+  .nav{
+    margin-block: 5vh;
+  }
+}
+
+span.intro{
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.price{
+  font-size: 24px;
+  font-weight: 700;
+  color: red;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link{
+  color: #37373f;
+    font-weight: normal;
+    margin: 0 10px;
+    padding: 10px 5px;
+    transition: 0.3s;
+    border-radius: 0;
+    cursor: pointer;
+    height: 100%;
+    border: 0;
+    border-bottom: 2px solid #b6b6bf;
+
+  }
+
+  .menu .nav-link.active {
+    color: #ff4000 !important;
+    border-color: #ff4000 !important;
+}
+
+  .nav-tabs{
+    border-bottom: none;
+  }
+
+
+
+@media all and (max-width:600px) {
+  .rest-section{
+    .row{
+      row-gap: 2vh;
+    }
+
+    .first-half{
+      text-align: center !important;
+    }
+  }
+  .buttons{
+    gap: 1;
+  }
+}
+
+.header-title {
+  color: #ff4000;
+}
+.menu_changer {
+  font-size: 24px;
+  &:hover{
+    a{
+      color: #ff4000;
+      border-color: #ff4000;
+    }
+
+  }
+}

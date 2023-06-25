@@ -1,0 +1,53 @@
+
+<!-- <div class="card" routerLink="/products">
+  <img src="https://images.deliveryhero.io/image/talabat/restaurants/New_Project(6)_(1)_6_637795739003294286.png?width=115&height=104" class="card-img-top" alt="..." >
+<div class="card-body">
+<h5 class="card-title">{{payload[0].title}}</h5>
+<p class="card-text">This is a wider card with supporting t</p>
+</div>
+</div> -->
+
+
+<div class="container">
+
+  <div class="header">
+    <h1 class="title">All Restaurants</h1>
+
+    <input class="search" type="search" (input)="filterArr()" [(ngModel)]="search_text" placeholder="search restaurants...!" >
+  </div>
+  <div *ngIf="!loading_state; else loading_blOCK" class="row g-5" >
+
+    <ng-template ngFor let-item [ngForOf]="payload" let-i="index">
+      <div  class="mycol col-sm-12 col-md-4 col-lg-3">
+        <div data-aos="fade-up" data-aos-duration="200"  data-aos-easing="linear" class="card" routerLink="/restaurant/{{payload[i].id}}">
+          <img src="{{ this.restService.environment.ImgURL + payload[i].image}}" class="card-img-top" width="15rem" style="aspect-ratio: 1/1;" alt="..." >
+          <div class="card-body">
+          <h5 class="card-title text-center">{{payload[i].title}}</h5>
+          <p class="card-text">{{payload[i].description.substring(0,50)}}..</p>
+          </div>
+        </div>
+      </div>
+  </ng-template>
+
+
+  </div>
+  <ng-template #loading_blOCK>
+    <div  style="height: 100vh;" >
+      <mat-spinner color="#ff4000" style=" width: 100px;
+      height: 100px;
+      margin: auto;
+      transform: translateY(25vh);"></mat-spinner>
+    </div>
+  </ng-template>
+
+
+
+</div>
+
+
+<ul class="prev">
+  <li routerLink="/home"> <i class="fa fa-caret-left"></i>Back</li>
+</ul>
+
+
+

@@ -1,0 +1,250 @@
+
+
+<!-- *** -->
+<!-- <div class="row ">
+
+  <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3">
+    <div class="card auth">
+      <div class="card-body auth-card">
+        <div class="auth-avatar">
+          <img src="https://pluspng.com/img-png/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png" alt="user" class="user-image">
+        </div>
+        <form >
+            <div class="form-group">
+              <label for="name">First Name : </label>
+              <input type="text" name="name" class="form-control" placeholder="Name" >
+
+            </div>
+            <div class="form-group">
+              <label for="name">Last Name : </label>
+              <input type="text" name="name" class="form-control" placeholder="Name" >
+            </div>
+            <div class="form-group">
+              <label for="name">User Name : </label>
+              <input type="text" name="name" class="form-control" placeholder=" User Name" >
+            </div>
+            <div class="form-group">
+              <label for="name">Gender : </label>
+                <input type="radio" id="html" name="fav_language" value="HTML">
+                <label for="html">Male</label>
+                <input type="radio" id="css" name="fav_language" value="CSS">
+                <label for="css">Female </label><br>
+            </div>
+            <div class="form-group">
+              <label for="name">Date of birth  : </label>
+              <input type="date" name="name" class="form-control" placeholder="Name" >
+            </div>
+            <div class="form-group">
+              <label for="name"> Subscriptions : </label>
+              <input type="text" name="name" class="form-control" placeholder="Subscriptions" >
+            </div>
+            <div class="form-group">
+              <label for="name"> Your authorization </label>
+                <input type="radio" id="html" name="fav_language" value="HTML">
+                <label for="html">User </label>
+                <input type="radio" id="css" name="fav_language" value="CSS">
+                <label for="css">Admin </label><br>
+            </div>
+            <!-<div class="form-group">
+              <label for="phone">Phone : </label>
+              <input type="text" name="phone" class="form-control" placeholder="Phone" >
+            </div> -->
+             <!-- <div class="form-group">
+              <label for="email">Email : </label>
+              <input type="text" name="email" class="form-control" placeholder="Email" >
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password : </label>
+              <input type="password" name="password" class="form-control" placeholder="********" >
+            </div>
+
+
+            <div class="text-center " >
+              <input type="submit" class="btn btn-outline-dark" value="Sign Up">
+            </div>
+            <div class="form-group text-center login">
+              Already have an account ? <a class="" routerLink="/login">Login</a> hera.
+            </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+<header>
+
+  <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+  <div class="overlay"></div>
+
+  <!-- muted="muted" -->
+  <!-- The HTML5 video element that will create the background video on the header -->
+  <video playsinline="playsinline" autoplay="autoplay"  [muted]="'muted'" muted="muted" loop="loop">
+    <source src="../../../assets/Food Reel - FH Studio.mp4" type="video/mp4">
+  </video>
+
+  <!-- The header content -->
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center py-5">
+      <div class="mx-auto text-white signupContainer" style="width: 40%; line-height: 6vh;">
+        <!-- <h1 class="display-3">REMEMBER THE WHY</h1>
+        <p> The 2023 Collection by adidas Basketball embodies a refined vision for sportswear rooted in love for hoops and the pursuit of authentic expression.​   </p> -->
+        <!-- <p class="lead mb-0">Using HTML5 Video and Bootstrap</p> -->
+
+        <div class="row ">
+          <!-- <div class="hamada"> -->
+          <div class="col-md-4">
+            <div class="card auth">
+              <div class="card-body auth-card">
+                <div class="auth-avatar">
+                  <img src="https://pluspng.com/img-png/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png" alt="user" class="user-image">
+                </div>
+                <form  [formGroup]="myRegisterationForm"   >
+                    <div class="form-group">
+                      <label for="name">First Name : </label>
+                      <input formControlName="firstName"  type="text" name="FirstName" class="form-control" placeholder="First Name" >
+
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                      <label for="name">Last Name : </label>
+                      <input formControlName="lastName"  type="text" name="Last Name" class="form-control" placeholder="Last Name" >
+                    </div>
+                    <div class="form-group">
+                      <label for="name">User Name : </label>
+                      <input  formControlName="username"  type="User" required  name="User Name" class="form-control" placeholder=" User Name" >
+                    </div>
+                    <div formControlName="" class="form-group">
+                      <label for="male">Gender : </label>
+                        <input  formControlName="gender"  type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input   formControlName="gender"  type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female </label><br>
+                    </div>
+
+                    <div formControlName="" class="form-group">
+                      <label  for="customFile">Profile Image</label>
+                      <input #profile type="file" class="form-control" id="customFile" />
+                    </div>
+
+
+
+
+                    <!-- //// gender  -->
+
+                    <!-- <div class="form-group">
+                      <div>  Gender :  </div>
+                      <div class="form-check form-check-inline" >
+                        <input   type="radio" id="male" class="form-check-input" name="gender" value="male">
+                          <label for="male">Male</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input   type="radio" id="female" class="form-check-input" name="gender" value="female">
+                          <label for="male">female</label>
+                      </div>
+                    </div>
+ -->
+
+
+
+
+
+                  <!-- gender //// -->
+                    <div class="form-group">
+                      <label for="name">Date of birth  : </label>
+                      <input formControlName="DOB"  type="date" name="name" class="form-control" placeholder="Name" name="myInput" ng-model="myInput" ng-required="myVar" >
+                    </div>
+                    <div class="form-group">
+                      <label for="name">Address : </label>
+                      <input formControlName="address" type="text" name="name" class="form-control" placeholder="Address" name="myInput" ng-model="myInput" ng-required="myVar" >
+                    </div>
+
+
+                    <!-- <div class="form-group">
+                      <label for="phone">Phone : </label>
+                      <input type="text" name="phone" class="form-control" placeholder="Phone" >
+                    </div> -->
+                     <div class="form-group">
+                      <label for="email">Email : </label>
+                      <input  formControlName="email"  type="text" name="email" class="form-control" placeholder="Email" required email  >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="password">Password : </label>
+                      <input formControlName="password"   #password id="password" required type="password" name="password" class="form-control" placeholder="********" >
+                    </div>
+                    <!--  form.controls['email']?.touched -->
+                    <!-- <div class="alert alert-danger" *ngIf="!myRegisterationForm.controls['password']?.touched"> *Please enter a valid password* </div> -->
+                   <!-- <div class="alert alert-danger " *ngIf="!myRegisterationForm.controls["password"]?.touched></div> -->
+
+                   <!--  [disabled]="!myRegisterationForm.valid" -->
+                    <div class="text-center " >
+                      <input type="submit" class="btn btn-outline-dark" value="Sign Up"  (click)="Add(profile)" >
+                    </div>
+                    <div class="form-group text-center login">
+                      Already have an account ? <a class="" routerLink="/login">Login</a> hera.
+                    </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</header>
+
+

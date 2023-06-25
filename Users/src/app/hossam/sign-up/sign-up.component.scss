@@ -1,0 +1,138 @@
+@import '../../../../node_modules/mdb-ui-kit/css/mdb.min.css';
+
+.login{
+  color:black;
+}
+.login a{
+  color: #d39e00;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+// .row{
+//   width: 80%;
+// }
+/* Add application styles & imports to this file! */
+// @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+// @import url('../node_modules/simple-keyboard/build/css/index.css');
+body{
+
+  background-color: brown;
+  // background-color: brown;
+}
+.auth-card{
+  background: #c31432;  /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+  background: gray;  /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: gray ; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 5px;
+  box-shadow: 0px 0px 30px #f7f7f7;
+}
+label{
+  color: #fff;
+  font-weight: 700;
+}
+.user-image{
+  height: 70px;
+}
+.auth-avatar{
+  text-align: center;
+  margin-top: -50px;
+}
+.auth{
+  margin-top: 35px;
+  border: none;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.btn-my{
+  background-color: #d39e00;
+  border-color: #d39e00;
+  color: #fff;
+}
+.simple-keyboard {
+  max-width: 850px;
+
+}
+
+// video style
+
+header {
+  position: relative;
+  background-color: black;
+  // height: 75vh;
+  /// height: 110vh;
+
+
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  object-fit: cover;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* Media Query for devices withi coarse pointers and no hover functionality */
+
+/* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+
+.form-group:first-child{
+  margin-top: 3vh;
+}
+.form-group{
+  margin-block: 1vh;
+}
+
+.example-full-width{
+  width: 100%;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  header {
+    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+  }
+
+  header video {
+    display: none;
+}
+}
+
+@media screen and (max-width:800px) {
+  .signupContainer{
+    width: 100% !important;
+  }
+}

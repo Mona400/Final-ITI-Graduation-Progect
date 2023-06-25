@@ -1,0 +1,163 @@
+<!-- <div class="makeSubscribtion">
+  <h1>Subscribe Now</h1>
+  <input type="text" [(ngModel)]="Restaurant" />
+  <input type="time" [(ngModel)]="test_payLoad.Dates[0]" />
+  <p>Date</p>
+  <input type="button" value="Subscribe Now" (click)="Add()" />
+</div> -->
+<!-- <app-show-subscribtion> </app-show-subscribtion> -->
+<!-- <section class="cart" (myEvent)="getData($event)">
+  <div class="container">
+    <h2>My Subscribtions</h2>
+    <table>
+      <tr>
+        <th>Restaurant</th>
+        <th>Date Created</th>
+        <th>Date Expaired</th>
+      </tr>
+    </table>
+  </div>
+</section> -->
+
+
+<section class=" h-custom" style="background-color: #eee;">
+
+
+  <div *ngIf="!loading_stating; else loading_blOCK" class="container mx-auto  py-5">
+
+
+    <div class="row d-flex justify-content-center align-items-center ">
+      <div class="col">
+        <div class="card shopping-cart" style="border-radius: 15px;">
+          <div class="card-body text-black">
+            <ng-template #EmptyCart>
+              <img src="assets/emptyCart.png" width="100%" height="100%" alt="" srcset="">
+            </ng-template>
+            <div *ngIf="cart_payload && cart_payload.meals.length > 0; else EmptyCart"  style="display: grid; grid-template-columns: 50% 50%; ">
+              <div class="col-lg-12 main-col px-5 py-4">
+
+                <h3 class="mb-5 pt-2 text-center fs-4 fw-bold text-uppercase">Your products</h3>
+
+                <div  style="    height: 50vh;
+                overflow-y: scroll;">
+                  <div *ngFor="let meal of cart_payload.meals;let i = index"  class="d-flex align-items-center mb-5">
+                    <div class="flex-shrink-0">
+                      <img src="{{enviroment+meal.meal_Img}}"
+                        class="img-fluid" style="width: 150px;" alt="Generic placeholder image">
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <a  class="float-end text-black" (click)="removeCartItem(meal.id)"><i class="fas fa-times"></i></a>
+                      <h5 class=" fs-4 fw-bold py-4" style="color: #ff4000;" >{{meal.meal_Name}}</h5>
+                      <!-- <h6 style="color: black;">ingredients : {{meal.description}}</h6> -->
+                      <!-- <h6 class="py-3">From : <span >{{meal.restaurant.title}}</span> </h6> -->
+                      <div class="d-flex sub-data align-items-center">
+                        <p class="fw-bold mb-0 me-5 pe-3">{{meal.meal_Price}} EGP</p>
+                        <div class="def-number-input number-input safari_only">
+                          <!-- <igx-time-picker
+                          #timePicker
+                          [(ngModel)]="meal.Date"
+                          [spinLoop]='false'
+                          value="16:00:00"
+                          >
+                              <label igxLabel>Time</label>
+                          </igx-time-picker> -->
+                          <mat-form-field style="width: 85%;">
+                            <input matInput
+                                   name="selected_time_A"
+                                   [(ngModel)]="meal.arrival_Time"
+                                   [ngxMatTimepicker]="pickerA"
+                                   [placeholder]="meal.arrival_Time"
+                                   readonly />
+                            <mat-icon matSuffix
+                                      (click)="pickerA.open()">
+                                watch_later
+                            </mat-icon>
+                        </mat-form-field>
+                        <ngx-mat-timepicker #pickerA></ngx-mat-timepicker>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+           
+
+
+                <hr class="mb-4" style="height: 2px; background-color: #1266f1; opacity: 1;">
+
+                <!-- <div class="d-flex justify-content-between px-x">
+                  <p class="fw-bold">Discount:</p>
+                  <p class="fw-bold">95$</p>
+                </div> -->
+                <div class="d-flex justify-content-between p-2 mb-2" style="background-color: #e1f5fe;">
+                  <h5 class="fw-bold mb-0">Total:</h5>
+                  <h5 class="fw-bold mb-0">{{(total_price).toFixed(2)}}$</h5>
+                </div>
+
+              </div>
+              <div class=" main-col col-lg-12 px-5 py-4">
+
+                <h3 class="mb-5 pt-2 text-center fs-4 fw-bold text-uppercase">Payment</h3>
+
+                <form [formGroup]="form" class="mb-5">
+
+                  <div class="form-outline mb-5">
+                    <input formControlName="visaNumber"  placeholder="Card Number" type="text" id="typeText" class="form-control form-control-lg"
+                       />
+                  </div>
+
+                  <div class="form-outline mb-5">
+                    <input formControlName="holderName" type="text" placeholder="Name on card" id="typeName" class="form-control form-control-lg"
+                      />
+
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-5">
+                      <div class="form-outline">
+                        <input formControlName="visaExpirationDate" type="date" id="typeExp" class="form-control form-control-lg" placeholder="Expiration"
+                           id="exp" />
+
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                      <div class="form-outline">
+                        <input formControlName="cardVerificationValue" placeholder="Cvv" type="password" id="typeText" class="form-control form-control-lg"
+                            size="1" minlength="3" maxlength="3" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit <a
+                      href="#!">obcaecati sapiente</a>.</p>
+
+                  <button type="button" (click)="Add()" class="btn btn-secondary btn-block btn-lg">Buy now</button>
+
+                  <h5 class="fw-bold mb-5" style="position: absolute; bottom: 0;">
+                    <a href="#!"><i class="fas fa-angle-left me-2"></i>Back to shopping</a>
+                  </h5>
+
+                </form>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #elseBlock>
+      <img style="width: 100%;" src="../../../../assets/empty_cart.png" alt="">
+    </ng-template>
+  </div>
+
+  <ng-template #loading_blOCK>
+    <div style="height: 100vh;" >
+      <mat-spinner color="#ff4000" style="    width: 100px;
+          height: 100px;
+      transform: translate(50vw, 50vh);"></mat-spinner>
+    </div>
+  </ng-template>
+
+</section>

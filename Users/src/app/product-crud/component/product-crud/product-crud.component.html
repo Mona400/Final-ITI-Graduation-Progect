@@ -1,0 +1,103 @@
+
+<div class="container-fluid" style="direction: rtl;">
+  <h2 class="text-light primary py-3">Product</h2>
+  <div class="d-flex">
+    <button type="button" (click)="add()"  class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Add Product
+    </button>   </div>
+</div>
+
+<!-- Table  -->
+
+<table class="table mt-4">
+
+
+  <thead>
+
+    <tr>
+      <th scope="col">s.id</th>
+      <th scope="col">s.productName</th>
+      <th scope="col">s.productTitle</th>
+      <th scope="col">s.oldPrice</th>
+      <th scope="col">s.newPrice</th>
+      <th scope="col">s.description</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of allproductdata">
+      <td>{{data.id}}</td>
+      <td>{{data.productName}}</td>
+      <td>{{data.productTitle}}</td>
+      <td>{{data.oldPrice}}</td>
+      <td>{{data.newPrice}}</td>
+      <td>{{data.description}}</td>
+
+      <td>
+        <button class="btn  btn-info"(click)="edit(data)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>&nbsp;
+        <button class="btn  btn-danger" (click)="deleteProduct(data)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div style="background-color:blue;" class="modal-header">
+        <h5 style="color: white; font-size: 26px; margin-left: 62px; font-weight: 620;" class="modal-title fs-5" id="exampleModalLabel">Student Info</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="formValue">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Id</label>
+            <input type="number" formControlName="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small *ngIf="formValue.get('id')?.invalid && formValue.get('id')?.touched" class="text-danger">id is Required</small>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="exampleInputEmail1">productName</label>
+            <input type="name" formControlName="productName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small *ngIf="formValue.get('productName')?.invalid && formValue.get('productName')?.touched" class="text-danger">Name is Required</small>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="exampleInputEmail1">productTitle</label>
+            <input type="name" formControlName="productTitle" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small *ngIf="formValue.get('productTitle')?.invalid && formValue.get('productTitle')?.touched" class="text-danger">Name is Required</small>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="exampleInputEmail1">oldPrice</label>
+            <input type="name" formControlName="oldPrice" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small *ngIf="formValue.get('oldPrice')?.invalid && formValue.get('oldPrice')?.touched" class="text-danger">Name is Required</small>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="exampleInputEmail1">newPrice</label>
+            <input type="text" formControlName="newPrice" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small *ngIf="formValue.get('newPrice')?.invalid && formValue.get('newPrice')?.touched" class="text-danger">built_no is Required</small>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="exampleInputEmail1">description</label>
+            <input type="text" formControlName="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small *ngIf="formValue.get('description')?.invalid && formValue.get('description')?.touched" class="text-danger">age is Required</small>
+          </div>
+          <br>
+
+
+
+
+        </form>
+      </div>
+      <div  class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+        <button *ngIf="showadd" type="button" (click)="addProduct()" class="btn btn-success">Add</button>
+        <button *ngIf="showupdate" type="button" (click)="update()" class="btn btn-success">Updated</button>
+      </div>
+    </div>
+  </div>
+</div>
